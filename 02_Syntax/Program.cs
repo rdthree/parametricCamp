@@ -24,7 +24,6 @@ namespace _02_Syntax
             //print a message to the console
             Console.WriteLine("Sup Dudes");
             Console.ReadKey(); //stop program, wait for user keyboard input
-
         }
     }
 }
