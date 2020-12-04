@@ -10,7 +10,14 @@ namespace firstConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.Write("whats ur name? ");
+            string name = Console.ReadLine();
+            Console.WriteLine($"hey {name} whats up?");
+
+            Console.Write($"{name} type a value: ");
+            string valuetext = Console.ReadLine();
+            double value = Convert.ToDouble(valuetext);
+            Console.WriteLine($"{name}, this is your number times two: {value * 2}");
             Console.ReadKey();
         }
     }
