@@ -4,74 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E06_VectorClass
+namespace MyGeometryKernel
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Vector v0 = new Vector(1, 2, 3);
-            Vector v1 = new Vector(3, 4, 0); //345 pythagorama
-            Console.WriteLine($"v0: {v0}");
-            Console.WriteLine($"v1: {v1}");
-
-            Vector zero = new Vector();
-            Console.WriteLine($"zero {zero}");
-
-            Vector copyOfV1 = new Vector(v1);
-            Console.WriteLine($"copy of v1: {copyOfV1}");
-
-            Console.WriteLine($"v0 length: {v0.Length}, v1 length: {v1.Length}");
-
-            v1.Reverse();
-            Console.WriteLine($"v1: {v1}");
-
-            v1.Scale(0.5);
-            Console.WriteLine($"v1 length: {v1.Length}");
-
-            v1.Unitize();
-            Console.WriteLine($"v1 unitized length: {v1.Length}");
-            Console.WriteLine($"v1 unitized: {v1}");
-            if (v1.Unitize() == true) { Console.WriteLine("unitized"); } else { Console.WriteLine("unitize failure"); }
-            
-            zero.Unitize();
-            Console.WriteLine($"zero unitized length: {zero.Length}");
-            Console.WriteLine($"zero unitized: {zero}");
-            if (zero.Unitize() == true) { Console.WriteLine("unitized"); } else { Console.WriteLine("unitize failure"); }
-
-
-            Vector v2 = Vector.Addition(v0, v1);
-            Console.WriteLine($"{v0} + {v1} = {v2}");
-
-            Console.WriteLine($"dot product of ({v0}) and ({v1}) is: ({Vector.DotProduct(v0, v1)})");
-
-            Vector vx = new Vector(Vector.XAxis);
-            Vector vy = new Vector(Vector.YAxis);
-            Vector vz = new Vector(Vector.ZAxis);
-            Vector cross = Vector.CrossProduct(vx, vy);
-            Console.WriteLine($"cross product of ({vx}) and ({vy}) is: ({cross})");
-
-            Console.WriteLine($"VECTOR ADDITION ({v0}) + ({v1}): ({v0 + v1})");
-            Console.WriteLine($"DOT PRODUCT ({v0}) x ({v1}): ({v0 * v1})");
-
-            Vector v0x2 = v0 * 2;
-            Console.WriteLine($"VECTOR MULTIPLICATION ({v0}) x 2: ({v0x2})");
-
-            Console.WriteLine($"the X of vector v0 is: {v0[0]}");
-            Console.WriteLine($"the Y of vector v0 is: {v0[1]}");
-            Console.WriteLine($"the Z of vector v0 is: {v0[2]}");
-
-            v0[0] = 9;
-            Console.WriteLine($"change the X of v0 to 9: {v0}");
-
-
-            Console.ReadKey();
-        }
-    }
-
-    /// <summary>
-    /// Represents a 3 dimensional vector
-    /// </summary>
     public class Vector
     {
         //properties - belong to the intance of this class
@@ -103,7 +37,7 @@ namespace E06_VectorClass
         {
             get
             {
-                if (i == 0) { return this.X; } 
+                if (i == 0) { return this.X; }
                 else if (i == 1) { return this.Y; }
                 else if (i == 2) { return this.Z; }
                 throw new Exception(); //in case of a condition not shown above
@@ -266,7 +200,7 @@ namespace E06_VectorClass
         /// <param name="a">First of two vectors to be multiplied</param>
         /// <param name="b">Second of two vectors to be multiplied</param>
         /// <returns>New Vector - Dot Product of two vectors</returns>
-        public static double DotProduct(Vector a, Vector b) =>  a.X * b.X + a.Y * b.Y + a.Z * b.Z; 
+        public static double DotProduct(Vector a, Vector b) => a.X * b.X + a.Y * b.Y + a.Z * b.Z;
         /// <summary>
         /// Cross Product of two vectors
         /// </summary>
