@@ -21,14 +21,23 @@ namespace _41_SimpleFunction
 
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Greets a person/place/thing by name
+        /// </summary>
+        /// <param name="name">The name of the person/place/thing</param>
+        /// <returns></returns>
         static string Greet(string name)
         {
             //string msg = $"hello {name}!";
             //return msg;
             return $"hello {name}!";
         }
-
+        /// <summary>
+        /// Adds two numbers together
+        /// </summary>
+        /// <param name="valueA">The first value</param>
+        /// <param name="valueB">The second value</param>
+        /// <returns></returns>
         static double Addition(double valueA, double valueB)
         {
             //double added = valueA + valueB;
